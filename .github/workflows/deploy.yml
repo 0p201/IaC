@@ -25,7 +25,7 @@ jobs:
           aws cloudformation deploy \
             --template-file infrastructure/web-server.yaml \
             --stack-name my-web-server-${{ github.ref_name }} \
-            --parameter-overrides KeyName=student-key \
+            --parameter-overrides KeyName=student-key EnvironmentName=${{ github.ref_name }} \
             --region us-east-1 \
             --no-fail-on-empty-changeset
 
